@@ -1,14 +1,14 @@
 const footerData = [
 	{
-		name: 'blogAstro',
+		name: '首頁',
 		path: '/',
 	},
 	{
-		name: 'About',
+		name: '關於顆顆',
 		path: '/about',
 	},
 	{
-		name: 'Blog',
+		name: '文章',
 		path: '/blog',
 	},
 ];
