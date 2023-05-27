@@ -1,63 +1,44 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import PostCard from '../components/PostCard.astro';
+import Layout from '../layouts/Layout.astro';
+const allPosts = await Astro.glob('./blog/*.md');
+const post1 = allPosts[0];
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	updatedDate={new Date('August 08 2022')}
-	heroImage="/placeholder-about.jpg"
->
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
-
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
-
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
-
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
-
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
+<Layout title="about">
+	<main class="p-10 text-center min-h-[420px] flex flex-col items-center container mx-auto">
+		<h1 class="text-2xl font-normal mb-4">About Astro</h1>
+		<div class="w-28 h-28 my-4 flex justify-center items-center border rounded-full shadow-lg">
+			<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 256 264"
+				><defs
+					><linearGradient id="logosAstro0" x1="137.073%" x2="85.999%" y1="-40.996%" y2="56.205%"
+						><stop offset="0%" stop-color="#FF1639"></stop><stop
+							offset="100%"
+							stop-color="#FF1639"
+							stop-opacity="0"></stop></linearGradient
+					></defs
+				><g fill="none" fill-rule="evenodd"
+					><path
+						fill="#000"
+						d="M156.377 4.834c1.575 1.956 2.379 4.595 3.986 9.874l35.105 115.32a146.081 146.081 0 0 0-41.97-14.209l-22.857-77.24a2.975 2.975 0 0 0-5.708.008l-22.58 77.193a146.086 146.086 0 0 0-42.159 14.23L95.471 14.682c1.612-5.27 2.418-7.904 3.994-9.857A12.97 12.97 0 0 1 104.72.936C107.048 0 109.804 0 115.315 0h25.196c5.518 0 8.277 0 10.607.938a13.016 13.016 0 0 1 5.259 3.896Z"
+					></path><path
+						fill="#FF5D01"
+						d="M160.577 135.516c-5.787 4.949-17.338 8.324-30.643 8.324c-16.33 0-30.017-5.084-33.65-11.922c-1.298 3.92-1.589 8.404-1.589 11.269c0 0-.856 14.068 8.929 23.852a9.199 9.199 0 0 1 9.2-9.198c8.707 0 8.697 7.596 8.69 13.76l-.001.55c0 9.355 5.718 17.375 13.85 20.757a18.86 18.86 0 0 1-1.896-8.268c0-8.923 5.238-12.246 11.326-16.108c4.845-3.072 10.227-6.485 13.936-13.332a25.145 25.145 0 0 0 3.034-12.013a25.24 25.24 0 0 0-1.186-7.67Z"
+					></path><path
+						fill="url(#logosAstro0)"
+						d="M160.577 135.516c-5.787 4.949-17.338 8.324-30.643 8.324c-16.33 0-30.017-5.084-33.65-11.922c-1.298 3.92-1.589 8.404-1.589 11.269c0 0-.856 14.068 8.929 23.852a9.199 9.199 0 0 1 9.2-9.198c8.707 0 8.697 7.596 8.69 13.76l-.001.55c0 9.355 5.718 17.375 13.85 20.757a18.86 18.86 0 0 1-1.896-8.268c0-8.923 5.238-12.246 11.326-16.108c4.845-3.072 10.227-6.485 13.936-13.332a25.145 25.145 0 0 0 3.034-12.013a25.24 25.24 0 0 0-1.186-7.67Z"
+					></path><path
+						fill="#000"
+						d="M28.014 221.64c15.874 0 24.2 5.68 24.2 16.418v10.464c.006 4.954.09 7.704.389 10.311l.062.52c.109.866.242 1.732.405 2.673h-7.704c-.389-2.49-.544-5.214-.544-8.093c-4.591 6.458-12.45 9.571-25.446 9.571c-11.75 0-19.376-4.28-19.376-11.672c0-3.502 1.478-6.537 4.124-8.482c2.802-2.023 6.459-3.424 16.341-3.969l24.279-1.4v-.779c0-6.225-6.225-9.882-16.73-9.882c-10.661 0-17.12 3.035-18.365 8.793H1.48c1.245-8.56 11.205-14.474 26.535-14.474Zm58.86 0c13.384 0 22.021 3.579 25.912 9.649l-6.303 3.034c-3.735-4.824-9.416-7.003-20.31-7.003c-9.571 0-14.007 2.101-14.007 6.147c0 3.19 2.88 4.67 8.015 5.058l18.91 1.479c10.116.856 14.084 4.124 14.084 10.505c0 7.704-6.459 12.995-22.566 12.995c-14.24 0-22.567-4.046-27.314-11.205l6.148-3.346c3.502 5.68 10.738 8.793 22.177 8.793c9.416 0 14.163-2.18 14.163-6.77c0-3.19-1.868-4.436-8.015-4.903l-18.754-1.478c-9.26-.778-14.162-4.046-14.162-10.816c0-7.548 8.248-12.14 22.022-12.14Zm141.19 0c16.575 0 27.936 8.403 27.936 20.932c0 12.528-11.361 20.932-27.936 20.932c-16.574 0-27.935-8.404-27.935-20.932c0-12.529 11.36-20.933 27.935-20.933Zm-91.497-11.673v13.15h19.454v5.837h-19.454v18.053c0 6.692 3.658 9.338 10.427 9.338c3.19 0 6.46-.467 9.183-1.09v6.304c-1.946.856-6.381 1.556-10.038 1.556c-14.396 0-17.042-7.704-17.042-15.407v-18.754H116.88v-5.836h12.217v-10.116l7.47-3.035Zm55.203 11.984c2.1 0 3.502.077 5.136.467v7.159c-1.79-.312-3.113-.467-5.214-.467c-6.147 0-9.649 1.712-12.373 4.746c-3.112 3.269-4.202 8.015-4.202 13.618v14.552h-7.392v-38.908h6.848V234.4c2.256-7.548 8.87-12.45 17.197-12.45ZM44.744 243.039l-22.8 1.4c-10.972.7-14.085 2.724-14.085 7.237c0 4.202 4.98 6.303 14.007 6.303c13.307 0 22.878-4.98 22.878-13.15v-1.79Zm183.32-15.252c-12.217 0-20.076 5.758-20.076 14.785c0 9.026 7.86 14.785 20.076 14.785c12.14 0 20.077-5.759 20.077-14.785c0-9.027-7.938-14.785-20.077-14.785Z"
+					></path></g
+				></svg
+			>
+		</div>
+		<p class="my-4">
+			Astro is a next-gen framework for building faster websites. With its unique island
+			architecture, Astro allows you to pull content from anywhere and serve it quickly to your
+			users. Say goodbye to slow loading times and hello to a seamless user experience.
+		</p>
+		<PostCard frontmatter={post1.frontmatter} url={post1.url} />
+	</main>
 </Layout>
