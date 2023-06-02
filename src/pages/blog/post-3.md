@@ -6,7 +6,7 @@ date: 2022-12-03
 author: Darnell McClure
 image: { src: '/images/post-3.jpg', alt: 'A picture of a coder' }
 description: CSS is a great way to style your website. In fact, there are no alternatives! Learn how to use it here.
-draft: false
+draft: true
 category: CSS
 ---
 
