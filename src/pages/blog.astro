@@ -2,6 +2,8 @@
 import PostCard from '../components/PostCard.astro';
 import Layout from '../layouts/Layout.astro';
 const allPosts = await Astro.glob('./blog/*.md');
+//const posts = await Astro.glob('../pages/post/*.md');
+const nonDraftPosts = allPosts.filter((post) => !post.frontmatter.draft);
 ---
 
 <Layout title="blog">
@@ -10,7 +12,7 @@ const allPosts = await Astro.glob('./blog/*.md');
 			<h1 class="text-3xl text-center">All Posts</h1>
 		</div>
 		<div class="posts flex flex-wrap justify-center items-center mx-auto mt-4 mb-16">
-			{allPosts.map((post) => <PostCard frontmatter={post.frontmatter} url={post.url} />)}
+			{nonDraftPosts.map((post) => <PostCard frontmatter={post.frontmatter} url={post.url} />)}
 		</div>
 	</main>
 </Layout>
