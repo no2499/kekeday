@@ -3,9 +3,10 @@ import PostCard from '../components/PostCard.astro';
 import Newsletter from '../components/Newsletter.astro';
 import Layout from '../layouts/Layout.astro';
 const allPosts = await Astro.glob('./blog/*.md');
-const post1 = allPosts[0];
-const post2 = allPosts[1];
-const post3 = allPosts[2];
+const nonDraftPosts = allPosts.filter((post) => !post.frontmatter.draft);
+const post1 = nonDraftPosts[0];
+const post2 = nonDraftPosts[1];
+const post3 = nonDraftPosts[2];
 ---
 
 <Layout title="Welcome to Astro.">
